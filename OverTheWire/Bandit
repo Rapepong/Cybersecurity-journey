@@ -9,6 +9,14 @@ The difference between 'find . | xargs file' and 'find . -exec file {} +' = The 
 TRADE-OFF find . -exec file {} + (fix format '-exec file {} +'can use only 'find' but xargs can use with a lot)
 Summary: find . -exec file {} + is better because it can handle every file name, but you have to use it with 'find'
 
+The command find / in Linux searches the entire filesystem starting from the root directory (/).
+
+grep "search_string" filename -> To search for a specific string in a single file
+grep -r "search_string" /path/to/directory   -> To search recursively through a directory and all its subdirectories
+
+strings command is a Linux utility that extracts and prints printable character sequences from binary (non-text) files.
+
+Base64 is a binary-to-text encoding scheme that represents binary data in an ASCII string format using 64 printable characters.(A-Z, a-z, 0-9, +, /)
 
 OverTheWire/Wargames/Bandit
 
@@ -38,6 +46,30 @@ Bandit Level 5 : Learn how to sort files (such as file size, unexecutable, only 
 The password for accessing bandit5 is: 6C7h9GD8M6ai5nr7wo1RonrzFjj9yIrG
 bandit5@bandit : find . -size 1033c ! -executable -exec file {} +, cat maybehere07/.file2
 
-Bandit Level 6  : 
+Bandit Level 6  : Learn what is find / and the other sorting
 The password for accessing bandit6 is: pXa26xhMWaC2SvDotA4r9EgZkulOeSBW
-bandit6@bandit :
+bandit6@bandit : find / -user bandit7 -size 33c -group bandit6, cat /var/lib/dpkg/info/bandit7.password
+
+Bandit Level 7  : Learning to find text in the file like press CTRL + F
+The password for accessing bandit7 is: Bmnnvf82KzQlfxgAI2d1zYbr1u9pr3E3
+bandit7@bandit : grep millionth data.txt -n
+
+Bandit Level 8  : Learing what is sort and uniq
+The password for accessing bandit8 is: VR1ljMayciFxbnUokuQmJFw6QC9VKtub
+bandit8@bandit : sort data.txt | uniq -cu
+
+Bandit Level 9  : Learning what string command is
+The password for accessing bandit9 is: EjmOSvuAu7sGAHqHVcBDPirRe9T03kxl
+bandit9@bandit : strings data.txt | grep ===
+
+Bandit Level 10  : Learn how to decode base64
+The password for accessing bandit10 is: B0s2khmbT9u0geKuOoVGW3JZKhndE3BG
+bandit10@bandit : base64 -d data.txt
+
+Bandit Level 11  : Know what is rotate letter by position (ROT13)
+The password for accessing bandit11 is: pYfOY6HwUsDj5rL9UvyhU7MCmv8vN5Ro
+bandit11@bandit : Solve rotate letter by using CyberChef(ROT13)
+
+Bandit Level 12  : 
+The password for accessing bandit12 is: GROozWPO1QyN3mGrjUkID3WCYkZiQxrN
+bandit12@bandit : 
