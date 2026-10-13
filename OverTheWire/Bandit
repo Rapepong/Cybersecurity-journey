@@ -1,0 +1,43 @@
+Bandit Level  : 
+The password for accessing bandit is: 
+bandit@bandit : 
+
+find * inspect only files in his directory; find . Inspect every single file recursive
+''=$name,""=John
+
+The difference between 'find . | xargs file' and 'find . -exec file {} +' = The destination of both is assign every file type, but if the file name contains spaces or specific letters, xargs file will die but -exec find {} + accommodates for it
+TRADE-OFF find . -exec file {} + (fix format '-exec file {} +'can use only 'find' but xargs can use with a lot)
+Summary: find . -exec file {} + is better because it can handle every file name, but you have to use it with 'find'
+
+
+OverTheWire/Wargames/Bandit
+
+Get access to his server SSH by using 'ssh -l bandit0 bandit.labs.overthewire.org -p 2220' 
+
+Bandit Level 0 : Learn how to find files and how to read them by using CLI
+The password for accessing bandit0 : bandit0
+bandit0@bandit : ls, cat readme
+
+Bandit Level 1 : Learn how to read a file for a specific character such as '-'
+The password for accessing bandit1 is: 6y2kwnwK6grgvwvpvLaa2T1cpFEKOhNR
+bandit1@bandit : ls, cat < -, cat ./-
+
+Bandit Level 2 : Learning the filename starts with a hyphen (e.g., --spaces in filename), the shell may interpret it as a command option.
+The password for accessing bandit2 is: PK8fYLZg2hnHSz83plBL1iEPKdD3QToB
+bandit2@bandit : cat -- '--spaces in this filename--' or cat './--spaces in this filename--'
+
+Bandit Level 3  : Learn how to find hidden files in a directory
+The password for accessing bandit3 is: 7ZZ2LFrykP2zEyvBl4m3clcL7tGYJPME
+bandit3@bandit : ls -la, cat +tab
+
+Bandit Level 4  : Learn to find each type of file, and xargs is better than * because xargs(extends arguments) will give you a little bit until max argument, like operating on a sequence for you, unlike * all of this to prevent error Argument list too long
+The password for accessing bandit4 is: xzTXq1rDJQVVAzdv5cHq1TQytTWufAMq
+bandit4@bandit : find . | xargs file, cat -- '-file07'(This file is the one only ASCII text)
+
+Bandit Level 5 : Learn how to sort files (such as file size, unexecutable, only human readable) and assign file types in many formats
+The password for accessing bandit5 is: 6C7h9GD8M6ai5nr7wo1RonrzFjj9yIrG
+bandit5@bandit : find . -size 1033c ! -executable -exec file {} +, cat maybehere07/.file2
+
+Bandit Level 6  : 
+The password for accessing bandit6 is: pXa26xhMWaC2SvDotA4r9EgZkulOeSBW
+bandit6@bandit :
