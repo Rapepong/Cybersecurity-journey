@@ -20,6 +20,10 @@ Base64 is a binary-to-text encoding scheme that represents binary data in an ASC
 
 Telnet(TCP port23) and SSH(TCP port22) are not the same; while both are network protocols used to access and manage remote devices via a command-line interface, SSH is fully encrypted and secure, whereas Telnet sends all data in unencrypted plaintext.
 
+vim [name], chmod 400 [name]
+chmod 400 = sets a file to read-only for the owner, no access for anyone else (-r--------).
+chmod 600 = sets a file to read and write for the owner, no access for anyone else (-rw-------).
+
 OverTheWire/Wargames/Bandit
 
 Get access to his server SSH by using 'ssh -l bandit0 bandit.labs.overthewire.org -p 2220' 
@@ -84,13 +88,13 @@ Bandit Level 14 : Know how to send a message on localhost but on a different por
 The password for accessing bandit14 is: aaWecNkG4FhxJQxz07uiwzVP6bJiYS65
 bandit14@bandit : telnet localhost 30000
 
-Bandit Level 15 : 
+Bandit Level 15 : Learn to send plaintext to difference port for using SSL/TLS encryption.
 The password for accessing bandit15 is: pbLYuZtTg4MgaqfJx8jbA9gKKGqM68A7
-bandit15@bandit : 
+bandit15@bandit : ncat --ssl localhost 30001
 
-Bandit Level 16 : 
-The password for accessing bandit16 is: 
-bandit16@bandit : 
+Bandit Level 16 : learn to find port with server by range
+The password for accessing bandit16 is: kS0Hf0u5HiXFwKMKFqXvPdOTNGGa0X8V
+bandit16@bandit : nmap -sV -p 31000-32000 localhost(find port that encryption each and see which port open the server)
 
 Bandit Level  : 
 The password for accessing bandit is: 
