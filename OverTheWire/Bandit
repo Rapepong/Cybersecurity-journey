@@ -70,6 +70,6 @@ Bandit Level 11  : Know what is rotate letter by position (ROT13)
 The password for accessing bandit11 is: pYfOY6HwUsDj5rL9UvyhU7MCmv8vN5Ro
 bandit11@bandit : Solve rotate letter by using CyberChef(ROT13)
 
-Bandit Level 12  : 
-The password for accessing bandit12 is: GROozWPO1QyN3mGrjUkID3WCYkZiQxrN
-bandit12@bandit : 
+Bandit Level 12  : Learn how to mkdir, cp file, covert hexdump to binary, decompress file and know what is tmp directory
+The password for accessing bandit12 is: GROozWPO8QyN0mGrjUkID0WCYkZiQxrN
+bandit12@bandit : mkdir /tmp/testtt
