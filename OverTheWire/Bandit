@@ -16,7 +16,9 @@ grep -r "search_string" /path/to/directory   -> To search recursively through a 
 
 strings command is a Linux utility that extracts and prints printable character sequences from binary (non-text) files.
 
-Base64 is a binary-to-text encoding scheme that represents binary data in an ASCII string format using 64 printable characters.(A-Z, a-z, 0-9, +, /)
+Base64 is a binary-to-text encoding scheme that represents binary data in an ASCII string format using 64 printable characters (A-Z, a-z, 0-9, +, /).
+
+Telnet(TCP port23) and SSH(TCP port22) are not the same; while both are network protocols used to access and manage remote devices via a command-line interface, SSH is fully encrypted and secure, whereas Telnet sends all data in unencrypted plaintext.
 
 OverTheWire/Wargames/Bandit
 
@@ -50,11 +52,11 @@ Bandit Level 6  : Learn what is find / and the other sorting
 The password for accessing bandit6 is: pXa26xhMWaC2SvDotA4r9EgZkulOeSBW
 bandit6@bandit : find / -user bandit7 -size 33c -group bandit6, cat /var/lib/dpkg/info/bandit7.password
 
-Bandit Level 7  : Learning to find text in the file like press CTRL + F
+Bandit Level 7  : Learning to find text in the file, like pressing CTRL + F
 The password for accessing bandit7 is: Bmnnvf82KzQlfxgAI2d1zYbr1u9pr3E3
 bandit7@bandit : grep millionth data.txt -n
 
-Bandit Level 8  : Learing what is sort and uniq
+Bandit Level 8  : Learning what sort and uniq
 The password for accessing bandit8 is: VR1ljMayciFxbnUokuQmJFw6QC9VKtub
 bandit8@bandit : sort data.txt | uniq -cu
 
@@ -66,10 +68,42 @@ Bandit Level 10  : Learn how to decode base64
 The password for accessing bandit10 is: B0s2khmbT9u0geKuOoVGW3JZKhndE3BG
 bandit10@bandit : base64 -d data.txt
 
-Bandit Level 11  : Know what is rotate letter by position (ROT13)
+Bandit Level 11  : Know what is to rotate letters by position (ROT13)
 The password for accessing bandit11 is: pYfOY6HwUsDj5rL9UvyhU7MCmv8vN5Ro
 bandit11@bandit : Solve rotate letter by using CyberChef(ROT13)
 
-Bandit Level 12  : Learn how to mkdir, cp file, covert hexdump to binary, decompress file and know what is tmp directory
+Bandit Level 12  : Learn how to mkdir, cp files, convert hexdump to binary, decompress files, and know what the tmp directory AND how to decompress file types bzip2, gzip(Your file must end with.gz), tar
 The password for accessing bandit12 is: GROozWPO8QyN0mGrjUkID0WCYkZiQxrN
-bandit12@bandit : mkdir /tmp/testtt
+bandit12@bandit : mkdir /tmp/testtt, cp /home/bandit12/data.txt ., xxd -r data.txt > data_bi(hex to bi), tar -xf data_bi.out, gzip -d data2.gz, bzip2 -d data_bin, mv data_bin.out data2.gz(file rename)
+
+Bandit Level 13 : Learn to cp(scp) files from SERVER to CLIENT and access the server using a private key
+The password for accessing bandit13 is: qQYQiHOBPR8zR61qxYqX45quvihF2uzk
+bandit13@bandit : scp -P 2220 bandit13@bandit.labs.overthewire.org:/home/bandit13/sshkey.private ./, ssh -i .\sshkey.private bandit14@bandit.labs.overthewire.org -p 2220(Use this on local ssh(Your PC))
+
+Bandit Level 14 : Know how to send a message on localhost but on a different port
+The password for accessing bandit14 is: aaWecNkG4FhxJQxz07uiwzVP6bJiYS65
+bandit14@bandit : telnet localhost 30000
+
+Bandit Level 15 : 
+The password for accessing bandit15 is: pbLYuZtTg4MgaqfJx8jbA9gKKGqM68A7
+bandit15@bandit : 
+
+Bandit Level 16 : 
+The password for accessing bandit16 is: 
+bandit16@bandit : 
+
+Bandit Level  : 
+The password for accessing bandit is: 
+bandit@bandit : 
+
+Bandit Level  : 
+The password for accessing bandit is: 
+bandit@bandit : 
+
+Bandit Level  : 
+The password for accessing bandit is: 
+bandit@bandit : 
+
+Bandit Level  : 
+The password for accessing bandit is: 
+bandit@bandit : 
