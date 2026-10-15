@@ -1,3 +1,4 @@
+File config for scheduleing is always in /etc/cron.d/ you can see automation script HERE! then you can follow and dig down to see what the script do (If you can)
 
 ---
 
@@ -89,6 +90,16 @@ Bandit Level 20 : Learn how to open a different port and how to be a receiver an
 The password for accessing bandit20 is: 4pIjcunZ0fK2vmp3IwfG8Vf7VhxD6pOA
 bandit20@bandit : cat /etc/bandit_pass/bandit20 | ncat -l -p 1024 (Set this terminal as a listener on port 1024, and whoever connects to the server will send a password(before pipe)), ./suconnect 1024
 
-Bandit Level 21 : 
+Bandit Level 21 : Knowing and learning how to investigate file and dig down in automation script
 The password for accessing bandit21 is: bW9kBv5WC3P4yoDyf12LSdGuNz5ka6hY
-bandit21@bandit : 
+bandit21@bandit : cd /etc/cron.d/(Path that keep automation script), cat cronjob_bandit22, cat /usr/bin/cronjob_bandit22.sh -> 
+--(Output)
+#!/bin/bash
+chmod 644 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv -> These mean User bandit22 copy his password from his private to paste on new file that public (chmod644)
+--
+cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+
+Bandit Level 22 : 
+The password for accessing bandit22 is: RYVux2rHEm9tiXHmLFzuR7Vhx6AZQMEz
+bandit22@bandit :
