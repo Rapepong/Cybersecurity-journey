@@ -1,5 +1,32 @@
 File config for scheduleing is always in /etc/cron.d/ you can see automation script HERE! then you can follow and dig down to see what the script do (If you can)
 
+/dev/null is a pseudo-device file that accepts and discards all writes
+
+&> is just the compact form that does both at once
+In POSIX shells like dash or sh, it's not interpreted this way — the & is read as "run in background"
+
+Instace of:
+-rw-r--r--   1 root root   120 Sep 26 21:53 cronjob_bandit22 -> Meaning :
+-rwxr-x--- 1 bandit22 bandit21 130 Sep 26 21:53 (Owner is bandit22 (rwx) and that group contain bandit21 (r-x) who other can do nothing (---))
+
+File Type (1st Character)
+- : Regular file (text, script, image, etc.)
+d : Directory (folder)
+l : Symbolic link (shortcut)
+
+Permission Groups (Next 9 Characters) -> Format = --- to rwx (Read, Write, Execute)
+Owner (User): The person who owns the file.
+Group: Other users who belong to the file's assigned group.
+Others (World): Absolutely everyone else on the system.
+
+-rwxr-x---         1               bandit22    bandit21         130            Sep 26 21:53   [filename]
+[Perms]   [Links cnt](Hard link)    [Owner]    [Group]   [Bytes](file size)   [Last Modified] [Name]
+
+Link Count : The number of hard links pointing to this file. For a regular file, this is almost always 1 (Me call myself) it will increase when you add subfolder or add something that link it with the other (same file by copying [ln og_file new_file])
+
+Hard Link: Think of it as a clone. It points directly to the physical data on the disk. If you delete the original file, the hard link still works and the data is kept safe.
+
+Soft Link (Symlink): Think of it as a shortcut. It only points to the location (path) of the original file. If you delete the original file, the soft link breaks and becomes completely useless.
 ---
 
 OverTheWire/Wargames/Bandit
@@ -100,6 +127,11 @@ cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv -> These m
 --
 cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
 
-Bandit Level 22 : 
+Bandit Level 22 : same same Bandit Level 21
 The password for accessing bandit22 is: RYVux2rHEm9tiXHmLFzuR7Vhx6AZQMEz
-bandit22@bandit :
+bandit22@bandit : ls -la /etc/cron.d/, cat /usr/bin/cronjob_bandit23.sh, echo I am user bandit23 | md5sum | cut -d ' ' -f 1 (Just follow what he do in auto script), cat /tmp/8ca319486bfbbc3663ea0fbe81326349
+
+Bandit Level 23 : Learn how to create auto script and add it into the correct position and know how to correctly watch permission by 'ls -l'
+The password for accessing bandit23 is: gKXDTAXnIz3OBxiPjRZ2uqutUlPZrBsw
+bandit23@bandit :
+
