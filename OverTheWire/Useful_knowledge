@@ -26,6 +26,7 @@ cat > myfile.txt
 echo "Second line" >> myfile.txt
 rm myfile.txt (permanently deleted; not in the recycle bin)
 vim myfile.txt (You can also edit directly)
+echo -n "This text stays on the same line" >> filename.txt -> Adding the -n flag tells echo to skip adding that trailing newline.
 
 find .	Current directory (. = "here")
 find /	Root of the filesystem (/)
