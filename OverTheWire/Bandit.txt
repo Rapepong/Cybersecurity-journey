@@ -97,7 +97,7 @@ Bandit Level 15 : Learn to send plaintext to difference port for using SSL/TLS e
 The password for accessing bandit15 is: pbLYuZtTg4MgaqfJx8jbA9gKKGqM68A7
 bandit15@bandit : ncat --ssl localhost 30001
 
-Bandit Level 16 : learn to find port with the server by range and learn to use chmod and vim (on Linux, like Notepad)
+Bandit Level 16 : learn to find the port with the server by range and learn to use chmod and vim (on Linux, like Notepad)
 The password for accessing bandit16 is: kS0Hf0u5HiXFwKMKFqXvPdOTNGGa0X8V
 bandit16@bandit : nmap -sV -p 31000-32000 localhost(find port that encrypts each and see which port the server opens), chmod 400 (read-only for private key) key.txt, ssh -i text.txt(connect by using private key) 
 
@@ -109,7 +109,7 @@ Bandit Level 18 : Learn how to ignore .bashrc go directly by using /bin/sh appen
 The password for accessing bandit18 is: OQxXZjELndr90zuhOTDYBEomI0SZITXI () use /bin/sh for bypass bash(default way) go directly
 bandit18@bandit : ssh -t (Force  pseudo-terminal allocation.), ssh -t -l bandit18 bandit.labs.overthewire.org -p 2220 /bin/sh
 
-Bandit Level 19 : You will know what is SetUID it allows you to use permissions as the owner
+Bandit Level 19 : You will know what SetUID is; it allows you to use permissions as the owner
 The password for accessing bandit19 is: KpsOfPkcP7i1FlIExk2QEjyt6dw8dxZI
 bandit19@bandit : ./bandit20-do cat /etc/bandit_pass/bandit20 (runs command as a user bandit20 because bandit20-do is a setuid binary file)
 
@@ -117,21 +117,20 @@ Bandit Level 20 : Learn how to open a different port and how to be a receiver an
 The password for accessing bandit20 is: 4pIjcunZ0fK2vmp3IwfG8Vf7VhxD6pOA
 bandit20@bandit : cat /etc/bandit_pass/bandit20 | ncat -l -p 1024 (Set this terminal as a listener on port 1024, and whoever connects to the server will send a password(before pipe)), ./suconnect 1024
 
-Bandit Level 21 : Knowing and learning how to investigate file and dig down in automation script
+Bandit Level 21 : Knowing and learning how to investigate files and dig down in automation scripts
 The password for accessing bandit21 is: bW9kBv5WC3P4yoDyf12LSdGuNz5ka6hY
 bandit21@bandit : cd /etc/cron.d/(Path that keep automation script), cat cronjob_bandit22, cat /usr/bin/cronjob_bandit22.sh -> 
 --(Output)
 #!/bin/bash
 chmod 644 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
-cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv -> These mean User bandit22 copy his password from his private to paste on new file that public (chmod644)
+cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv -> This means user bandit22 copies his password from his private file to paste into a new file that is public (chmod644)
 --
 cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
 
-Bandit Level 22 : same same Bandit Level 21
+Bandit Level 22 : same as Bandit Level 21
 The password for accessing bandit22 is: RYVux2rHEm9tiXHmLFzuR7Vhx6AZQMEz
-bandit22@bandit : ls -la /etc/cron.d/, cat /usr/bin/cronjob_bandit23.sh, echo I am user bandit23 | md5sum | cut -d ' ' -f 1 (Just follow what he do in auto script), cat /tmp/8ca319486bfbbc3663ea0fbe81326349
+bandit22@bandit : ls -la /etc/cron.d/, cat /usr/bin/cronjob_bandit23.sh, echo I am user bandit23 | md5sum | cut -d ' ' -f 1 (Just follow what he does in the auto script), cat /tmp/8ca319486bfbbc3663ea0fbe81326349
 
-Bandit Level 23 : Learn how to create auto script and add it into the correct position and know how to correctly watch permission by 'ls -l'
+Bandit Level 23 : Learn how to create an auto script and add it into the correct position, and know how to check permissions with 'ls -l'
 The password for accessing bandit23 is: gKXDTAXnIz3OBxiPjRZ2uqutUlPZrBsw
 bandit23@bandit :
-
