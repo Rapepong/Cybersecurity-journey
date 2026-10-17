@@ -27,6 +27,10 @@ Link Count : The number of hard links pointing to this file. For a regular file,
 Hard Link: Think of it as a clone. It points directly to the physical data on the disk. If you delete the original file, the hard link still works and the data is kept safe.
 
 Soft Link (Symlink): Think of it as a shortcut. It only points to the location (path) of the original file. If you delete the original file, the soft link breaks and becomes completely useless.
+
+Normally, when you connect via SSH, the Linux server checks the /etc/passwd file to determine which program to use as your default "shell" (command prompt).
+
+/bin/bash: This is the standard command-line interface. It stays open and waits for your commands indefinitely. As long as you do not type exit, your SSH connection remains active.
 ---
 
 OverTheWire/Wargames/Bandit
@@ -144,26 +148,26 @@ Bandit Level 24 : Learn how to and what is brute force
 The password for accessing bandit24 is: hVQMk3lJNsmQ7VF3ubyrNNBom7BOgVXv
 bandit24@bandit : for i in {0000..9999}; do echo "hVQMk3lJNsmQ7VF3ubyrNNBom7BOgVXv $i"; done | nc localhost 30002 | grep -v "Wrong"
 
-Bandit Level 25 : 
+Bandit Level 25 : Learn the different between /bin/bash and /usr/bin/showtext, You can press v to access editor when it is /usr/bin/showtext and while it is displaying "---MORE---" you can press v to go to editor SHELL and add command as a user who login
 The password for accessing bandit25 is: SoHfqMOEqIX2IYKVciZxvgpR9a2Djx4P
-bandit25@bandit : 
+bandit25@bandit : :set shell=/bin/bash, :shell, cat /etc/bandit_pass/bandit26
 
-Bandit Level 25 : 
-The password for accessing bandit25 is: 
-bandit25@bandit : 
+Bandit Level 26 : 
+The password for accessing bandit26 is: jHdv2ELQhT22BkprMNDjybZDAkw1zeBJ
+bandit26@bandit : 
 
-Bandit Level 25 : 
-The password for accessing bandit25 is: 
-bandit25@bandit : 
+Bandit Level 27 : 
+The password for accessing bandit27 is: 
+bandit27@bandit : 
 
-Bandit Level 25 : 
-The password for accessing bandit25 is: 
-bandit25@bandit : 
+Bandit Level 28 : 
+The password for accessing bandit28 is: 
+bandit28@bandit : 
 
-Bandit Level 25 : 
-The password for accessing bandit25 is: 
-bandit25@bandit : 
+Bandit Level 29 : 
+The password for accessing bandit29 is: 
+bandit29@bandit : 
 
-Bandit Level 25 : 
-The password for accessing bandit25 is: 
-bandit25@bandit : 
+Bandit Level 30 : 
+The password for accessing bandit30 is: 
+bandit30@bandit : 
