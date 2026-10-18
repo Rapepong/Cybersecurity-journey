@@ -64,6 +64,9 @@ SCP (Secure Copy Protocol) is a method for securely transferring files between l
 A SetUID (Set User ID) binary is a special executable file configured to run with the permissions of the file owner, regardless of who executes it.
 You can check SetUID binary by 'ls -la' and you will see "rws" on left side
 When ls -la and Standard owner permissions look like rwx (Read, Write, Execute). When SetUID is enabled, the owner's execute bit x changes to a lowercase s (rws).
+The red background highlight in the terminal output is a visual indicator from the system's ls color configuration that this file has the SUID (Set-User-ID) permission bit set.
+Example : ./bandit20-do cat /etc/bandit_pass/bandit20 (runs command as a user bandit20 because bandit20-do is a setuid binary file)
+
 
 Netcat(ncat) often called the "Swiss army knife" of networking,It is a command-line utility that reads and writes raw data across network connections using the TCP or UDP protocols.
 You can use Netcat to send and receive data between computers if they are on the same network (like P.Sophon)
