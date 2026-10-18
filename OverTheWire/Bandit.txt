@@ -152,16 +152,16 @@ Bandit Level 25 : Learn the different between /bin/bash and /usr/bin/showtext, Y
 The password for accessing bandit25 is: SoHfqMOEqIX2IYKVciZxvgpR9a2Djx4P
 bandit25@bandit : :set shell=/bin/bash, :shell, cat /etc/bandit_pass/bandit26
 
-Bandit Level 26 : 
+Bandit Level 26 : While you are in the SHELL they set an SUID (Set-User-ID) for you to act as bandit27 and reveal his password
 The password for accessing bandit26 is: jHdv2ELQhT22BkprMNDjybZDAkw1zeBJ
-bandit26@bandit : 
+bandit26@bandit : ./bandit27-do cat /etc/bandit_pass/bandit27
 
-Bandit Level 27 : 
-The password for accessing bandit27 is: 
-bandit27@bandit : 
+Bandit Level 27 : Understanding how to git clone
+The password for accessing bandit27 is: STJLJBRRphMxKB392CT4iOr5CbzPU9ER
+bandit27@bandit : git clone ssh://bandit27-git@bandit.labs.overthewire.org:2220/home/bandit27-git/repo -> (It would clone on your current position on CLI)
 
 Bandit Level 28 : 
-The password for accessing bandit28 is: 
+The password for accessing bandit28 is: y8Yd2ssKcpHpud7UvOSOxwamRMzIGIeQ
 bandit28@bandit : 
 
 Bandit Level 29 : 
