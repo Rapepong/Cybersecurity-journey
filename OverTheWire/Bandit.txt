@@ -38,6 +38,14 @@ git branch -r -> check branch on remote (beach on github)
 
 git tag (To find all TAG, Usually use for TAG version new version release version)
 git show <commit-hash-ID or tag-name> (git show is a Git command-line utility used to display detailed information about specific Git objects, such as commits, tags(pointer to tag), trees(structure directory), and blobs(raw data no filename no file path).)
+
+-- $0 -- In Linux and Unix-like systems, $0 is a special shell variable that holds the name of the currently running process—either the shell itself or the script being executed.
+
+It behaves differently depending on where you use it:
+
+In an interactive terminal: $0 expands to the name of the shell you are currently using (such as bash, sh, or zsh). This is why typing $0 as a command in Bandit 32 (Level that you always run command with the UPPERCASE) spawned a new, unrestricted shell—it evaluated to the name of the default shell program and executed it.
+
+Inside a shell script: $0 expands to the name or path of the script itself. If you write a script named backup.sh and run it as ./backup.sh, $0 evaluates to ./backup.sh.
 ---
 
 OverTheWire/Wargames/Bandit
@@ -169,24 +177,24 @@ bandit27@bandit : git clone ssh://bandit27-git@bandit.labs.overthewire.org:2220/
 
 Bandit Level 28 : Remind to see his history by using git log and checkout
 The password for accessing bandit28 is: y8Yd2ssKcpHpud7UvOSOxwamRMzIGIeQ
-bandit28@bandit : git log, git checkout <commit-hash> (To check anything what they do on that commit)
+bandit28@bandit : git log, git show <commit-hash> (To check anything what they do on that commit)
 
 Bandit Level 29 : Learning about branch remote and checkout it
-The password for accessing bandit29 is: 
+The password for accessing bandit29 is: Em7eGtqaMySwNFjCpwzzHhLhospOcdt0
 bandit29@bandit : git branch -r <branch>, git checkout <branch>, cat README.md 
 
 Bandit Level 30 : Learning about git tag and git show
-The password for accessing bandit30 is: 
+The password for accessing bandit30 is: jq9Dfg2rXsfYsWMgFuKlXhphjdH7USgX
 bandit30@bandit : git tag, git show secret
 
 Bandit Level 31 : Learning what is .gitignore and try to reject it, How to push commit to remote(github)
-The password for accessing bandit31 is: 
-bandit31@bandit : 
+The password for accessing bandit31 is: 82NkymblpGBYmIXG6ZQ8YldBYstHpfUf
+bandit31@bandit : rm .gitignore, git add ., git commit -m "Remove .gitignore and add key.txt", git push origin master
 
-Bandit Level 32 : 
-The password for accessing bandit32 is: 
-bandit32@bandit : 
+Bandit Level 32 : Surviving when you are trapped in UPPERCASE SHELL (System force your command to capital)
+The password for accessing bandit32 is: pWuj5jBQ6IgV0NXwiH6g1pXRF8S1YvbT
+bandit32@bandit : $0 (It evaluated to the name of the default shell program and executed it.), cat /etc/bandit_pass/bandit33 (System auto login me to bandit33)
 
 Bandit Level 33 : 
-The password for accessing bandit33 is: 
+The password for accessing bandit33 is: u4P2CyPOwPGLe94RdD9Uo2FxFwvnFswM
 bandit33@bandit : 
