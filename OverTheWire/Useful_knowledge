@@ -1,5 +1,12 @@
 # Knowledge from OverTheWire-Bandit on every levels
 
+    cd      -P         /var/www
+#   ^^^     ^^^       ^^^^^^^^
+#   cmd  option/flag  argument   
+
+Symlink (Symbolic Link) = special file that keep actual path or directory
+In cd -option /path -> -L = "Remember path that you typed", -P = "Go to actual link if you use shortcut path it will find actual path" 
+
 Standard SSH vs. Direct Command Execution1. Standard SSH Login (ssh bandit18@...)
   -Authentication: You authenticate with your credentials.
 1.Default Shell Lookup: sshd checks /etc/passwd on the server to see your assigned default shell (which is set to 2.bash).
