@@ -195,6 +195,8 @@ Bandit Level 32 : Surviving when you are trapped in UPPERCASE SHELL (System forc
 The password for accessing bandit32 is: pWuj5jBQ6IgV0NXwiH6g1pXRF8S1YvbT
 bandit32@bandit : $0 (It evaluated to the name of the default shell program and executed it.), cat /etc/bandit_pass/bandit33 (System auto login me to bandit33)
 
-Bandit Level 33 : 
+Bandit Level 33 : At this moment, next level does not exist yet.
 The password for accessing bandit33 is: u4P2CyPOwPGLe94RdD9Uo2FxFwvnFswM
-bandit33@bandit : 
+bandit33@bandit : At this moment, next level does not exist yet.
+
+Congratulations on solving the last level of this game!
